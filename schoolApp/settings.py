@@ -133,7 +133,7 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-django_heroku.settings(locals()),
+#django_heroku.settings(locals()),
 
 
 # Default primary key field type
