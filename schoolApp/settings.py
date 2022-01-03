@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,15 +79,23 @@ WSGI_APPLICATION = 'schoolApp.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
+
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
         'NAME': 'd8kh24afjti8jh',
-        'USER':'ubmbqozmiezgpv',
-        'PASSWORD':'f4dc7ae9aa15c99d5d69ce1c2aaf336573e180ef8e6d6c3f7a7ff6af15b9a142',
+
+        'USER': 'ubmbqozmiezgpv',
+
+        'PASSWORD': 'f4dc7ae9aa15c99d5d69ce1c2aaf336573e180ef8e6d6c3f7a7ff6af15b9a142',
+
         'HOST': 'ec2-54-157-113-118.compute-1.amazonaws.com',
-        'PORT':'5432'
-        
+
+        'PORT': '5432',
+
     }
+
 }
 
 
@@ -133,7 +143,7 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-#django_heroku.settings(locals()),
+
 
 
 # Default primary key field type
@@ -147,3 +157,6 @@ MEDIA_URL = '/media/'
 
 LOGOUT_REDIRECT_URL='logout'
 LOGIN_REDIRECT_URL='home'
+
+
+django_heroku.settings(locals()),
