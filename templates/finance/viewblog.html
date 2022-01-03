@@ -1,0 +1,41 @@
+<html>
+<head>
+
+<style type='text/css'>
+
+dt {font-size: 25px; color:orangered}
+dd {font-size:20px; color:royalblue}
+img {width:600px; height:500px}
+</style>
+
+
+</head>
+
+<body>
+
+
+    {% for i in data %}
+    <img src="{{ i.photo.url }}" />
+    <dl>
+    
+           <dt>{{ i.title }}:</dt> 
+            <dd>{{ i.description}}</dd>
+            
+    </dl>
+    <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+{% endfor %}
+
+</body>
+
+</html>

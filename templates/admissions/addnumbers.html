@@ -1,0 +1,36 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Admission</title></head>
+    <style type='text/css'>
+        h1 {color:red;}
+        form { border-style:solid; 
+               border-color: orange;
+               border-width:10px;
+               border-radius:10px; padding-left:30px;
+            width:45%;}
+        button {color:red;background-color: greenyellow;width: 100px; height:30px}
+        div {padding-left:20px}
+
+
+
+    </style>
+<body>
+
+    
+<form method="POST">
+    <table>
+    {{sumnumbers.as_table}}
+    </table>
+    <button>submit</button>
+    
+    
+    {% csrf_token %}
+</form>
+
+
+</body>
+</html>

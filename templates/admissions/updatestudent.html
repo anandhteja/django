@@ -1,0 +1,44 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update student</title></head>
+    <style type='text/css'>
+        h1 {color:red;}
+        form { border-style:solid; 
+               border-color: orange;
+               border-width:10px;
+               border-radius:10px; padding-left:30px;
+            width:45%;}
+        button {color:red;background-color: greenyellow;width: 100px; height:30px}
+        div {padding-left:20px}
+
+
+
+    </style>
+<body>
+
+    <h1><img src="{% static 'images/school.jpg' %}"/>Hello, Welcome to update student page</h1><br/>
+<br/>
+
+<br/>
+
+<h2>Please update the below application</h2>
+<br/>
+
+<br/>
+<form method="POST" >
+    <table>
+    <h3>{{form.as_table}}</h3>
+    </table>
+
+<div><button type="submit" value="update student">Update student</button></div>
+
+{% csrf_token %}
+</form>
+
+
+</body>
+</html>

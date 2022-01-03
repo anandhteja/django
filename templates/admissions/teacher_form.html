@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+<style type='text/css'>
+
+button {margin-left:15%;}
+
+table {margin-top:10%;}
+</style>
+
+
+</head>
+
+<body>
+<h1 style="color:red"> Please add the Teacher details</h1>
+<form method='POST'>
+<table   width= 500px height=100px>
+    {{form.as_table}}
+</table><br/>
+<button type= "submit"> Add teacher</button>
+
+{% csrf_token %}
+
+</form>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

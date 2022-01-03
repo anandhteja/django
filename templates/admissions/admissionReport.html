@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admission Report: 2021-22</title></head>
+    <style type='text/css'>
+      th {color:red; background-color: yellow; }
+      td {color:black; background-color:plum; text-transform:capitalize;}
+      h1{font-size:50px; color:firebrick}
+
+
+    </style>
+<body>
+
+
+      
+
+  <h1><img src="{% static 'images/school.jpg' %}"/> Admission Report: 2021-22</h1><br/>
+
+<br/>
+
+<br/>
+
+
+
+<table border=1 width=1000 height=500 cellspacing=0px cellpadding=10px>
+  <tr align="center">
+    <th>ID</th>
+    <th>Student Name</th>
+    <th>Father name</th>
+    <th>Class name</th>
+    <th>Contact number</th>
+    <th>Actions</th>
+    
+  </tr>
+  {% for s in allstudents  %}
+<tr align="center">
+ <td>{{s.id}}</td> 
+<td>{{s.name}}</td>
+<td>{{s.father_name}}</td>
+<td>{{s.classname}}</td>
+<td>{{s.contact_number}}</td>
+<td>
+  <a href="/delete/{{s.id}}/">Delete</a>&nbsp;&nbsp; <a href="/update/{{s.id}}/">Update</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+{% csrf_token %}
+</table>
+<br/>
+
+
+<br/>
+
+<br/>
+
+
+<h2>Comments</h2>  <textarea rows=5 col=25 name="about"> </textarea><br/>
+<br/>
+<br/>
+
+
+
+<h2>hello, {{user.username}}</h2>
+
+
+  
+
+
+
+<button><a href="/deleteaccount/">Deleteaccount</a></button><br/>
+<button><a href="/updateprofile/">Updateprofile</a></button>
+  
+
+ 
+  <br/>
+  <br/>
+
+
+
+  
+
+
+
+
+  
+
+  
+
+ 
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style type='text/css'> 
+    form {margin-left: 200px; margin-top: 100px;}
+
+    </style>
+    <title></title>
+</head>
+<body>
+    <h1>ADD BLOGS HERE</h1>
+    <form method = "post" enctype="multipart/form-data">
+        <table>
+            {% csrf_token %}
+        {{ form.as_table }}
+    </table>
+        <button type="submit">Upload</button>
+        
+    </form>
+</body>
+</html>

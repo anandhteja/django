@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teacher's page</title></head>
+    <style type='text/css'>
+      th {color:red; background-color: yellow; }
+      td {color:black; background-color:plum; text-transform:capitalize;}
+      h1{font-size:50px; color:firebrick}
+
+
+    </style>
+<body>
+
+  <h1><img src="{% static 'images/school.jpg' %}"/> Teacher's page</h1><br/>
+
+<br/>
+
+<br/>
+
+
+
+<table border=5 width=1000 height=500 cellspacing=5px cellpadding=20px>
+  <tr align="center">
+    <th>ID</th>
+    <th>Teacher Name</th>
+    <th>Subject</th>
+    <th>Contact number</th>
+    <th>Actions</th>
+    
+  </tr>
+  {% for s in teacher_list  %}
+<tr align="center">
+ <td><a href="getteacher/{{s.id}}">{{s.id}}</a></td> 
+<td>{{s.name}}</td>
+<td>{{s.subject}}</td>
+<td>{{s.contact_number}}</td>
+<td>
+  <a href="deleteteacher/{{s.id}}">Delete</a>&nbsp;&nbsp; <a href="updateteacher/{{s.id}}">Update</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+
+</table>
+<br/>
+
+
+<br/>
+
+<br/>
+
+
+<h2>Comments</h2>  <textarea rows=5 col=25 name="about"> </textarea><br/>
+<br/>
+
+
+  
+
+</body>
+</html>

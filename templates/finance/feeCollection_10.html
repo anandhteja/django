@@ -1,0 +1,53 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title >10th Class Fee Collection page</title>
+<style type='text/css'>
+    th {color:red; background-color: yellow; }
+    td {color:black; background-color:plum; text-transform:capitalize;}
+    h1{font-size:50px; color:firebrick}
+
+
+  </style>
+
+
+</head>
+
+
+<body>
+    <h1><img src="{% static 'images/school.jpg' %}"/>10th Class Fee collection Report: 2021-22</h1><br/>
+
+    <table border=1 width=1000 height=500 cellspacing=0px cellpadding=10px>
+        <tr align="center">
+          <th>ID</th>
+          <th>Student Name</th>
+          <th>Father name</th>
+          <th>Class name</th>
+          <th>Contact number</th>
+          <th>Fees due</th>
+          
+        </tr>
+        {% for s in feecollection  %}
+      <tr align="center">
+       <td>{{s.id}}</td> 
+      <td>{{s.Student_name}}</td>
+      <td>{{s.father_name}}</td>
+      <td>{{s.class_name}}</td>
+      <td>{{s.contact_number}}</td>
+      <td>{{s.fee_due}}</td>
+      {% endfor %}<br/>
+</tr>
+</table>
+        
+      
+          
+
+        
+
+          
+</body>
+</html>
