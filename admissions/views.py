@@ -281,18 +281,17 @@ def updateprofile(request):
     
 
 
-
+@login_required
 def about(request):
     if request.method=='POST':
         n=request.POST['name']
         e=request.POST['email']
         p=request.POST['phone']
         m=request.POST['message']
-        userinput=About(name=n,email=e,phone=p,message=m)
-        
-
+        userinput=About.objects.create(name=n,email=e,phone=p,message=m)
         
         userinput.save()
+                    
         return HttpResponse('<h1>Request has been sent to the Admin</h1> <br/>')
 
 
