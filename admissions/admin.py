@@ -36,7 +36,7 @@ admin.site.register(Teacher,Teacheradmin)
 
 
 
-class Aboutadmin(admin.ModelAdmin):
-    list_display=['name','email','phone','message']
+#class Aboutadmin(admin.ModelAdmin):
+    #list_display=['name','email','phone','message']
 
-admin.site.register(About,Aboutadmin)
+admin.site.register(About)
