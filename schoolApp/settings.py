@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-3)klq4@cv)31x*-$+a#=ir(_g*%!-3nm4!_$wjp7#0q=jyjq!9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['schoolapp-tej.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['schoolapp-tej.herokuapp.com']
 
 
 # Application definition
