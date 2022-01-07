@@ -80,20 +80,23 @@ WSGI_APPLICATION = 'schoolApp.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
 
-        'NAME': 'schoolapp',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'USER': 'root',
+        'NAME': 'd8kh24afjti8jh',
 
-        'PASSWORD': 'pass@143',
+        'USER': 'ubmbqozmiezgpv',
 
-        'HOST':'localhost',
+        'PASSWORD': 'f4dc7ae9aa15c99d5d69ce1c2aaf336573e180ef8e6d6c3f7a7ff6af15b9a142',
 
-        'PORT': '3306',
-        
+        'HOST': 'ec2-54-157-113-118.compute-1.amazonaws.com',
+
+        'PORT': '5432',
+
     }
+
 }
 
 
