@@ -2,7 +2,7 @@ from django.contrib import admin
 from admissions.models import Student
 from finance.models import Fee
 from finance.models import Blog
-from admissions.models import Teacher
+from admissions.models import Teacher,About
 
 
 # Register your models here.
@@ -31,3 +31,12 @@ admin.site.register(Blog,Studentblog)
 class Teacheradmin(admin.ModelAdmin):
     list_display=['id','name','subject','contact_number']
 admin.site.register(Teacher,Teacheradmin)
+
+
+
+
+
+class Aboutadmin(admin.ModelAdmin):
+    list_display=['name','email','phone','message']
+
+admin.site.register(About,Aboutadmin)

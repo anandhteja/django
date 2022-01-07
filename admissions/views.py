@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView
+import admissions
 from admissions.models import Student
 from admissions.forms import Admissionform
 from admissions.forms import Addnumbers
@@ -15,6 +16,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
 from finance.models import Blog
+from admissions.models import About
 from admissions.forms import Updateprofile
 
 
@@ -200,9 +202,9 @@ def register(request):
 
 
         if p1==p2:
-            if User.objects.filter(username__in=[u]):
+            if User.objects.filter(username=u):
               return HttpResponse("<h1> Username already exists </h1>")
-            elif User.objects.filter(email__in=[e]):
+            elif User.objects.filter(email=e):
                 return HttpResponse("<h1> Email already exists </h1>") 
             else:
                 s=User.objects.create_user(username=u, password=p1,email=e,first_name=n, last_name=l)
@@ -277,3 +279,34 @@ def updateprofile(request):
 
 
     
+
+
+
+def about(request):
+    if request.method=='POST':
+        n=request.POST['name']
+        e=request.POST['email']
+        p=request.POST['phone']
+        m=request.POST['message']
+        userinput=About(name=n,email=e,phone=p,message=m)
+        
+
+        
+        userinput.save()
+        return HttpResponse('<h1>Request has been sent to the Admin</h1> <br/>')
+
+
+    
+    return render(request,'admissions/about.html')
+
+
+
+
+
+
+@login_required()
+@permission_required('admissions.view_about')
+def aboutread(request):
+    ab=About.objects.all()
+    dict={'about':ab}
+    return render(request,'admissions/aboutread.html',dict)

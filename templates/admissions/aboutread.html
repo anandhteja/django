@@ -1,0 +1,51 @@
+
+ {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User requests</title>
+
+  <style type="text/css">
+
+    h1 {color:green;}
+    h2 {color:red}
+
+
+  </style>
+</head>
+<body>
+
+
+
+  <h1>User Request</h1><br/>
+
+
+  <br/>
+
+
+  {% for a  in about  %}
+  <dl>
+  <dt><h1>{{a.name}}:</h1></dt><br/>
+  <dd>Email: {{a.email}}</dd><br/>
+
+  <dd>Phone:{{a.phone}}</dd><br/>
+  <dd><h2>Message:{{a.message}}</h2></dd><br/>
+  <button ><a href="#">Delete</a></button>
+  <br/>
+  <br/>
+  <br/>
+  <br/><br/>
+  <br/>
+  <br/>
+  <br/>
+</dl>
+    
+  {% endfor %}
+  
+  
+</body>
+</html>

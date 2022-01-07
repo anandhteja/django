@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
+import rest_framework
 from admissions import views as ad
 from finance import views as fin
+from restframework import views as re 
+
+
 from django.contrib.auth.decorators import login_required
 from django.views.static import serve
 from django.conf.urls import url
@@ -41,7 +45,7 @@ urlpatterns = [
     path('treport/', login_required(ad.Teacherread.as_view()),name='trreport'),
 
     path('getteacher/<int:pk>/', login_required(ad.Getteacher.as_view())),
-    path('treport/getteacher/<int:pk>/', ad.Getteacher.as_view()),
+    path('treport/getteacher/<int:pk>/', login_required(ad.Getteacher.as_view())),
 
 
     path('insertteacher/', login_required(ad.Insertteacher.as_view())),
@@ -97,19 +101,28 @@ urlpatterns = [
     path('logout/', ad.logout, name='logout'),
     path('deleteaccount/', ad.deleteaccount),
     path('updateprofile/', ad.updateprofile),
+
+
+
+    
+
     
 
     
 
     
-    
-    
+    path('restread/', re.rest_read),
+    path('restcreate/', re.rest_create),
+    path('restupdate/<int:id>', re.rest_update),
+
+    path('restdelete/<int:id>', re.rest_delete),
     
 
 
    
     
-    
+    path('about/', ad.about),
+    path('aboutread/', ad.aboutread),
 
 
 

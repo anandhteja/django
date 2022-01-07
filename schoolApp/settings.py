@@ -15,6 +15,7 @@ from pathlib import Path
 import django_heroku
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-3)klq4@cv)31x*-$+a#=ir(_g*%!-3nm4!_$wjp7#0q=jyjq!9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['schoolapp-tej.herokuapp.com']
+ALLOWED_HOSTS = ['schoolapp-tej.herokuapp.com','localhost']
 
 
 # Application definition
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'admissions','finance',
+    'admissions','finance','restframework','rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -79,23 +80,20 @@ WSGI_APPLICATION = 'schoolApp.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-
     'default': {
+        'ENGINE': 'django.db.backends.mysql',
 
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'schoolapp',
 
-        'NAME': 'd8kh24afjti8jh',
+        'USER': 'root',
 
-        'USER': 'ubmbqozmiezgpv',
+        'PASSWORD': 'pass@143',
 
-        'PASSWORD': 'f4dc7ae9aa15c99d5d69ce1c2aaf336573e180ef8e6d6c3f7a7ff6af15b9a142',
+        'HOST':'localhost',
 
-        'HOST': 'ec2-54-157-113-118.compute-1.amazonaws.com',
-
-        'PORT': '5432',
-
+        'PORT': '3306',
+        
     }
-
 }
 
 
