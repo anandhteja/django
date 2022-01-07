@@ -1,5 +1,5 @@
 from django.contrib import admin
-from admissions.models import Student
+from admissions.models import Student, Tej
 from finance.models import Fee
 from finance.models import Blog
 from admissions.models import Teacher,About
@@ -40,3 +40,8 @@ admin.site.register(Teacher,Teacheradmin)
     #list_display=['name','email','phone','message']
 
 admin.site.register(About)
+
+
+admin.site.register(Tej)
+
+

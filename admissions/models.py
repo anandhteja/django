@@ -26,6 +26,16 @@ class About(models.Model):
     phone=models.CharField(max_length=15)
     message=models.CharField(max_length=1000)
 
+
+
+
+
+class Tej(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    phone=models.CharField(max_length=15)
+
+
     
     
 
