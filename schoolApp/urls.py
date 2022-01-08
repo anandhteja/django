@@ -58,6 +58,7 @@ urlpatterns = [
     path('deleteteacher/<int:pk>/', login_required(ad.Deleteteacher.as_view())),
     path('treport/deleteteacher/<int:pk>/', login_required(ad.Deleteteacher.as_view())),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('allauth.urls')),
     
     
     
@@ -123,6 +124,34 @@ urlpatterns = [
     
     path('about/', ad.about),
     path('aboutread/', ad.aboutread),
+
+
+    path('listcreate/', re.Studentlistcreate.as_view()),
+    path('delupdate/<int:pk>', re.Studentdelupdate.as_view()),
+
+
+
+
+
+    #concerete api views
+
+    path('listapi/', re.Studentlistapi.as_view()),
+
+    path('createapi/', re.Studentcreateapi.as_view()),
+
+    path('retrieveapi/<int:pk>', re.Studentretrieveapi.as_view()),
+    path('updateapi/<int:pk>', re.Studentupdateapi.as_view()),
+    path('destroyapi/<int:pk>', re.Studentdestroyapi.as_view()),
+
+
+
+
+    path('lc/', re.Studentlc.as_view()),
+    path('ru/<int:pk>', re.Studentru.as_view()),
+    path('rd/<int:pk>', re.Studentrd.as_view()),
+    path('rud/<int:pk>', re.Studentrud.as_view()),
+
+
 
 
 

@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 
 
 <!DOCTYPE html>
@@ -74,6 +76,9 @@
 						<a class="txt2" href="/register">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+							
+							<button><a href="{% provider_login_url "google" %}" >Google Login</a></button>
+
 						</a>
 					</div>
 				</form>
@@ -100,6 +105,10 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="{% static "login/js/main.js" %}"></script>
+
+
+
+
 
 </body>
 </html>

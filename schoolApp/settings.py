@@ -41,7 +41,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'admissions','finance','restframework','rest_framework'
+    'admissions','finance','restframework','rest_framework',
+    'django.contrib.sites',
+    
+    #allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+
+    #providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -83,17 +94,17 @@ DATABASES = {
 
     'default': {
 
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
 
-        'NAME': 'd8kh24afjti8jh',
+        'NAME': 'schoolapp',
 
-        'USER': 'ubmbqozmiezgpv',
+        'USER': 'root',
 
-        'PASSWORD': 'f4dc7ae9aa15c99d5d69ce1c2aaf336573e180ef8e6d6c3f7a7ff6af15b9a142',
+        'PASSWORD': 'pass@143',
 
-        'HOST': 'ec2-54-157-113-118.compute-1.amazonaws.com',
+        'HOST': 'localhost',
 
-        'PORT': '5432',
+        'PORT': '3306',
 
     }
 
@@ -142,6 +153,7 @@ STATIC_ROOT=[os.path.join(BASE_DIR,'staticfiles')]
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+SITE_ID=1
 
 
 
