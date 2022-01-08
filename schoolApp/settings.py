@@ -94,17 +94,17 @@ DATABASES = {
 
     'default': {
 
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'schoolapp',
+        'NAME': 'd8kh24afjti8jh',
 
-        'USER': 'root',
+        'USER': 'ubmbqozmiezgpv',
 
-        'PASSWORD': 'pass@143',
+        'PASSWORD': 'f4dc7ae9aa15c99d5d69ce1c2aaf336573e180ef8e6d6c3f7a7ff6af15b9a142',
 
-        'HOST': 'localhost',
+        'HOST': 'ec2-54-157-113-118.compute-1.amazonaws.com',
 
-        'PORT': '3306',
+        'PORT': '5432',
 
     }
 
